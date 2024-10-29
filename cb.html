@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pemesanan Angkiran Modern</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-section h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+        }
+        .order-summary {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kasir Angkiran Modern</h1>
+        <h2>Pak Dhe Djoko</h2>
+
+        <!-- Menu Makanan -->
+        <div class="menu-section">
+            <h2>Makanan</h2>
+            <div class="menu-item">
+                <span>Indomie Goreng Tante</span>
+                <span>Rp. 5,000</span>
+                <button onclick="addToOrder('Indomie Goreng Tante', 5000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Indomie Kuah Tante</span>
+                <span>Rp. 4,000</span>
+                <button onclick="addToOrder('Indomie Kuah Tante', 4000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Indomie Goreng Telur</span>
+                <span>Rp. 8,000</span>
+                <button onclick="addToOrder('Indomie Goreng Telur', 8000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Indomie Kuah Telur</span>
+                <span>Rp. 7,000</span>
+                <button onclick="addToOrder('Indomie Kuah Telur', 7000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Nasi Kucing</span>
+                <span>Rp. 3,000</span>
+                <button onclick="addToOrder('Nasi Kucing', 3000)">Tambah</button>
+            </div>
+        </div>
+
+        <!-- Menu Minuman -->
+        <div class="menu-section">
+            <h2>Minuman</h2>
+            <div class="menu-item">
+                <span>Teh Manis H/C</span>
+                <span>Rp. 2,500</span>
+                <button onclick="addToOrder('Teh Manis H/C', 2500)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Kopi Hitam H/C</span>
+                <span>Rp. 3,000</span>
+                <button onclick="addToOrder('Kopi Hitam H/C', 3000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span> Jeruk H/C</span>
+                <span>Rp. 4,000</span>
+                <button onclick="addToOrder('Jeruk H/C', 4000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Nutrisari</span>
+                <span>Rp. 4,000</span>
+                <button onclick="addToOrder('Nutrisari', 4000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Susu</span>
+                <span>Rp. 4,000</span>
+                <button onclick="addToOrder('Susu', 4000)">Tambah</button>
+            </div>
+        </div>
+
+        <!-- Menu Snack -->
+        <div class="menu-section">
+            <h2>Snack</h2>
+            <div class="menu-item">
+                <span>Keripik </span>
+                <span>Rp. 3,000</span>
+                <button onclick="addToOrder('Keripik ', 3000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Roti Kecil</span>
+                <span>Rp. 1,500</span>
+                <button onclick="addToOrder('Gorengan', 1500)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Roti Besar</span>
+                <span>Rp. 5,000</span>
+                <button onclick="addToOrder('Roti Besar', 5000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Sate Kulit</span>
+                <span>Rp. 2,500</span>
+                <button onclick="addToOrder('Sate Kulit', 2500)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Sate Ati/Ampela</span>
+                <span>Rp. 3,000</span>
+                <button onclick="addToOrder('Sate Ati/Ampela', 3000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Sate Telur Puyuh</span>
+                <span>Rp. 4,000</span>
+                <button onclick="addToOrder('Sate Telur Puyuh', 4000)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Sate Usus</span>
+                <span>Rp. 2,500</span>
+                <button onclick="addToOrder('Sate Usus', 2500)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Bakso Bakar</span>
+                <span>Rp. 2,500</span>
+                <button onclick="addToOrder('Bakso Bakar', 2500)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Sosis Bakar</span>
+                <span>Rp. 2,500</span>
+                <button onclick="addToOrder('Sosis Bakar', 2500)">Tambah</button>
+            </div>
+            <div class="menu-item">
+                <span>Gorengan</span>
+                <span>Rp. 1,000</span>
+                <button onclick="addToOrder('Gorengan', 1000)">Tambah</button>
+            </div>
+        </div>
+
+        <!-- Ringkasan Pesanan -->
+        <div class="order-summary">
+            <h2>Pesanan Saya</h2>
+            <div id="order-list"></div>
+            <p><strong>Total: Rp. <span id="total-price">0</span></strong></p>
+            <button onclick="generateReport()">Simpan Pesanan</button>
+            <button onclick="resetOrder()">Reset Pesanan</button>
+            <button onclick="showAllOrders()">Lihat Semua Pesanan</button>
+        </div>
+    </div>
+
+    <!-- Modal Riwayat Pesanan -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Riwayat Semua Pesanan</h2>
+            <button class="close-btn" onclick="closeModal()">Tutup</button>
+            <div id="order-history"></div>
+        </div>
+    </div>
+
+    <script>
+        let order = [];
+        let totalPrice = 0;
+        let orderCount = 1;
+        const allOrders = [];
+
+        function addToOrder(itemName, itemPrice) {
+            order.push({ name: itemName, price: itemPrice });
+            totalPrice += itemPrice;
+            renderOrder();
+        }
+
+        function renderOrder() {
+            const orderList = document.getElementById("order-list");
+            orderList.innerHTML = "";
+            order.forEach(item => {
+                const listItem = document.createElement("p");
+                listItem.textContent = `${item.name} - Rp. ${item.price}`;
+                orderList.appendChild(listItem);
+            });
+            document.getElementById("total-price").textContent = totalPrice;
+        }
+
+        function resetOrder() {
+            order = [];
+            totalPrice = 0;
+            renderOrder();
+        }
+
+        function generateReport() {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString();
+            const formattedTime = currentDate.toLocaleTimeString();
+
+            const report = {
+                date: formattedDate,
+                time: formattedTime,
+                orderNumber: orderCount,
+                items: [...order],
+                total: totalPrice
+            };
+            allOrders.push(report);
+
+            alert(`Pesanan ${orderCount} disimpan dengan total Rp. ${totalPrice}`);
+            orderCount++;
+            resetOrder();
+        }
+
+        function showAllOrders() {
+            const orderHistory = document.getElementById("order-history");
+            orderHistory.innerHTML = "";
+
+            if (allOrders.length === 0) {
+                orderHistory.textContent = "Belum ada pesanan.";
+                return;
+            }
+
+            allOrders.forEach(order => {
+                const orderInfo = document.createElement("div");
+                orderInfo.innerHTML = `
+                    <hr>
+                    <p><strong>Pemesanan ke: ${order.orderNumber}</strong></p>
+                    <p>Tanggal: ${order.date}, Jam: ${order.time}</p>
+                    <p>Items:</p>
+                `;
+
+                order.items.forEach(item => {
+                    const itemInfo = document.createElement("p");
+                    itemInfo.textContent = `- ${item.name}: Rp. ${item.price}`;
+                    orderInfo.appendChild(itemInfo);
+                });
+
+                const totalInfo = document.createElement("p");
+                totalInfo.innerHTML = `<strong>Total: Rp. ${order.total}</strong>`;
+                orderInfo.appendChild(totalInfo);
+                orderHistory.appendChild(orderInfo);
+            });
+
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
